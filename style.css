@@ -1,40 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 body {
-    background: #0d0d0d;
-    font-family: 'Orbitron', sans-serif;
-    color: #e8e8e8;
-    padding: 0;
+    background: #0b0f19;
+    font-family: 'Inter', sans-serif;
+    color: #e4e8ef;
     margin: 0;
+    padding: 0;
 }
 
-h1, h2 {
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
     color: #5cc9ff;
-    text-shadow: 0 0 10px #5cc9ff;
+    text-shadow: 0 0 10px rgba(92, 201, 255, 0.7);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #97a4b7;
+}
+
+
+.links {
+    margin-top: 20px;
 }
 
 .links a {
-    padding: 10px 18px;
-    background: #0a1930;
+    padding: 10px 20px;
+    margin: 0 10px;
     border: 1px solid #5cc9ff;
     border-radius: 8px;
+    text-decoration: none;
     color: #5cc9ff;
-    transition: 0.2s;
+    transition: 0.25s;
 }
 
 .links a:hover {
     background: #5cc9ff;
     color: #000;
-    box-shadow: 0 0 20px #5cc9ff;
+    box-shadow: 0 0 18px #5cc9ff;
 }
 
+
+section h2 {
+    font-size: 26px;
+    border-left: 4px solid #5cc9ff;
+    padding-left: 12px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #5cc9ff;
+    text-shadow: 0 0 6px rgba(92, 201, 255, 0.6);
+}
+
+
+ul {
+    margin-left: 20px;
+    line-height: 1.8;
+    color: #cdd3df;
+}
+
+
 .repo-card {
-    background: #111;
-    border: 1px solid #333;
-    padding: 15px;
+    background: #101624;
+    border: 1px solid #1c2538;
+    padding: 15px 20px;
     border-radius: 10px;
-    transition: 0.2s;
+    margin-bottom: 15px;
+    transition: 0.25s;
 }
 
 .repo-card:hover {
     border-color: #5cc9ff;
-    box-shadow: 0 0 15px #5cc9ff;
+    box-shadow: 0 0 12px rgba(92, 201, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.repo-title {
+    font-size: 20px;
+    color: #5cc9ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.repo-title:hover {
+    text-decoration: underline;
 }
