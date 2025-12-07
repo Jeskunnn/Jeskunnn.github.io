@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeskin Villacarlos - Portfolio & CV</title>
+    <title>Jeskin Villacarlos | Software Developer</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container">
@@ -13,19 +14,17 @@
     <header>
         <h1>Jeskin Villacarlos</h1>
         <p class="subtitle">Software Developer • Backend • Spring Boot • React • MySQL</p>
+
         <div class="links">
             <a href="https://github.com/Jeskunnn" target="_blank">GitHub</a>
-            <a href="mailto:jeskinv4@gmail.com">Email</a>
+            <a href="mailto:jeskinvillacarlos@gmail.com">Email</a>
         </div>
     </header>
 
     <section>
         <h2>About Me</h2>
         <p>
-            I am an aspiring software developer from Cebu Institute of Technology University,
-            focusing on backend development using Spring Boot, Java, MySQL, and React for frontend.
-            Passionate about building practical systems: authentication, dashboards, inventory,
-            role-based access control, and more.
+            I am an aspiring software developer from Cebu Institute of Technology University, focusing on backend development using Spring Boot, Java, MySQL, and React for frontend. Passionate about building practical systems: authentication, dashboards, inventory, role-based access control, and more.
         </p>
     </section>
 
@@ -41,44 +40,32 @@
         </ul>
     </section>
 
-    <section id="projects">
+    <section>
         <h2>Projects</h2>
         <p>Automatically loading all public repositories from GitHub...</p>
-        <div id="repo-list"></div>
+        <div id="projects"></div>
     </section>
-
-    <footer>
-        <p>© 2025 Jeskin Villacarlos • Hosted on GitHub Pages</p>
-    </footer>
 
 </div>
 
 <script>
-    // Fetch and display your repos dynamically
+    // GitHub Repos Fetcher
     fetch("https://api.github.com/users/Jeskunnn/repos")
         .then(response => response.json())
         .then(repos => {
-            const repoList = document.getElementById("repo-list");
-            repoList.innerHTML = "";
+            const projectContainer = document.getElementById("projects");
 
-            repos
-                .filter(repo => !repo.fork) 
-                .forEach(repo => {
-                    const div = document.createElement("div");
-                    div.className = "repo-card";
+            repos.forEach(repo => {
+                const card = document.createElement("div");
+                card.className = "repo-card";
 
-                    div.innerHTML = `
-                        <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-                        <p>${repo.description ? repo.description : "No description provided."}</p>
-                        <span class="lang">${repo.language ?? ""}</span>
-                    `;
+                card.innerHTML = `
+                    <a class="repo-title" href="${repo.html_url}" target="_blank">${repo.name}</a>
+                    <p>${repo.description || "No description provided."}</p>
+                `;
 
-                    repoList.appendChild(div);
-                });
-        })
-        .catch(error => {
-            document.getElementById("repo-list").innerHTML =
-                "<p>Failed to load repositories.</p>";
+                projectContainer.appendChild(card);
+            });
         });
 </script>
 
